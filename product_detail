@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurnishFlow - Product Detail</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-10 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Site Title -->
+            <a href="shop.html" class="text-2xl font-bold text-indigo-700 tracking-wide">FurnishFlow</a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-200">Home</a>
+                <a href="shop.html" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-200">Shop</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-200">About Us</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-200">Contact</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-200">Cart</a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Navigation (hidden by default, can be toggled with JS if needed) -->
+        <div class="md:hidden mt-4 space-y-2 text-center hidden" id="mobile-menu">
+            <a href="index.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+            <a href="shop.html" class="block py-2 px-4 text-indigo-700 bg-gray-100 rounded-md">Shop</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">About Us</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">Cart</a>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="py-16 bg-white shadow-md rounded-xl mx-auto my-12 max-w-6xl px-6 lg:px-12">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-10">
+                <!-- Product Image Gallery (placeholder) -->
+                <div class="lg:w-1/2 flex justify-center items-center rounded-lg overflow-hidden bg-gray-100">
+                    <img id="product-main-image" src="https://placehold.co/800x600/E5E7EB/4B5563?text=Product+Image" alt="Product Image" class="w-full h-auto object-cover max-h-[500px]">
+                </div>
+
+                <!-- Product Details -->
+                <div class="lg:w-1/2 flex flex-col justify-center">
+                    <a href="shop.html" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium mb-4 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> Back to Shop
+                    </a>
+                    <h1 id="product-title" class="text-4xl font-extrabold text-gray-900 mb-4">Modern Sofa</h1>
+                    <p class="text-2xl font-bold text-indigo-700 mb-4">$1,299.00 <span class="text-lg text-gray-500 line-through ml-2">$1,500.00</span></p>
+                    <p id="product-description" class="text-gray-700 leading-relaxed mb-6">
+                        Experience ultimate comfort and style with our Modern Sofa. Crafted with premium velvet upholstery and robust wooden frame, this sofa offers a perfect blend of modern aesthetics and lasting durability. Ideal for contemporary living spaces, it provides ample seating for relaxation and entertaining guests.
+                    </p>
+
+                    <!-- Features/Specifications (example list) -->
+                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                        <li>Material: High-quality velvet fabric</li>
+                        <li>Frame: Solid hardwood construction</li>
+                        <li>Dimensions: 80" W x 35" D x 30" H</li>
+                        <li>Color: Charcoal Grey (Customizable options available)</li>
+                    </ul>
+
+                    <!-- Quantity Selector -->
+                    <div class="flex items-center mb-6">
+                        <label for="quantity" class="text-lg font-medium text-gray-700 mr-4">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" class="w-20 p-2 border border-gray-300 rounded-md text-center focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg transition-colors duration-200 text-lg">
+                        CheckOut
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products Section (optional) -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">You Might Also Like</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Product Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/600x400/BFCDD5/1F2937?text=Matching+Coffee+Table" alt="Matching Coffee Table" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Modern Coffee Table</h3>
+                        <p class="text-gray-600 mb-3">$350.00</p>
+                        <a href="product_detail.html?id=7" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Related Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/600x400/BFCDD5/1F2937?text=Accent+Chair" alt="Accent Chair" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Comfort Accent Chair</h3>
+                        <p class="text-gray-600 mb-3">$280.00</p>
+                        <a href="product_detail.html?id=8" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Related Product Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/600x400/BFCDD5/1F2937?text=Floor+Lamp" alt="Floor Lamp" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Stylish Floor Lamp</h3>
+                        <p class="text-gray-600 mb-3">$120.00</p>
+                        <a href="product_detail.html?id=9" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Newsletter Section -->
+    <section class="bg-indigo-700 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Connected!</h2>
+            <p class="text-lg mb-8 opacity-90">Sign up for our newsletter to get the latest updates and exclusive offers.</p>
+            <form class="max-w-md mx-auto">
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <input type="email" placeholder="Enter your email" class="w-full sm:w-auto flex-grow px-5 py-3 rounded-full border border-white bg-indigo-600 text-white placeholder-indigo-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent">
+                    <button type="submit" class="w-full sm:w-auto bg-white text-indigo-700 font-semibold py-3 px-8 rounded-full shadow-md hover:bg-indigo-100 transition-colors duration-200">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-gray-300 py-12 px-6 md:px-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Brand Info -->
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-4">FurnishFlow</h3>
+                <p class="text-sm">Modern furniture for every home, crafted with quality and care.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition-colors duration-200">Home</a></li>
+                    <li><a href="shop.html" class="hover:text-white transition-colors duration-200">Shop</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-200">FAQs</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info / Social Media -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Connect With Us</h3>
+                <p class="text-sm mb-4">123 Furniture Lane, Design City, 12345</p>
+                <p class="text-sm mb-4">Email: info@furnishflow.com</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <!-- Facebook Icon (example - use actual SVG or Font Awesome if preferred) -->
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.00025C6.47748 2.00025 2 6.47773 2 12.0002C2 17.0279 5.65651 21.1448 10.596 21.9082V14.1252H7.66901V11.1612H10.596V8.92725C10.596 6.07125 12.336 4.47525 14.935 4.47525C16.1956 4.47525 17.5135 4.69725 17.5135 4.69725V7.42025H16.0335C14.5075 7.42025 14.2445 8.35325 14.2445 9.38025V11.1612H17.3005L16.8025 14.1252H14.2445V21.9082C19.3496 21.1415 23 16.9422 23 12.0002C23 6.47773 18.5225 2.00025 13 2.00025H12Z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <!-- Instagram Icon -->
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.5 2.00025C5.0195 2.00025 3 4.01975 3 6.50025V17.5002C3 19.9807 5.0195 22.0002 7.5 22.0002H16.5C18.9805 22.0002 21 19.9807 21 17.5002V6.50025C21 4.01975 18.9805 2.00025 16.5 2.00025H7.5ZM19.5 6.50025C19.5 5.57225 18.728 4.80025 17.8 4.80025H6.2C5.272 4.80025 4.5 5.57225 4.5 6.50025V17.5002C4.5 18.4282 5.272 19.2002 6.2 19.2002H17.8C18.728 19.2002 19.5 18.4282 19.5 17.5002V6.50025ZM12 8.00025C9.7905 8.00025 8 9.79075 8 12.0002C8 14.2097 9.7905 16.0002 12 16.0002C14.2095 16.0002 16 14.2097 16 12.0002C16 9.79075 14.2095 8.00025 12 8.00025ZM12 14.5002C10.619 14.5002 9.5 13.3812 9.5 12.0002C9.5 10.6192 10.619 9.50025 12 9.50025C13.381 9.50025 14.5 10.6192 14.5 12.0002C14.5 13.3812 13.381 14.5002 12 14.5002ZM17.25 5.75025C16.6975 5.75025 16.25 6.19775 16.25 6.75025C16.25 7.30275 16.6975 7.75025 17.25 7.75025C17.8025 7.75025 18.25 7.30275 18.25 6.75025C18.25 6.19775 17.8025 5.75025 17.25 5.75025Z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                        <!-- Twitter Icon -->
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6.00025C21.7915 6.29525 21.0845 6.48625 20.3545 6.57425C21.1185 6.12625 21.7135 5.42625 21.9965 4.59125C21.2675 5.03425 20.4705 5.34725 19.6385 5.51825C18.9665 4.80525 18.0665 4.35725 17.0605 4.35725C15.0865 4.35725 13.4865 6.00225 13.4865 8.03325C13.4865 8.31825 13.5185 8.59925 13.5855 8.87125C10.6435 8.72225 8.0005 7.33225 6.2165 5.16325C5.9085 5.69825 5.7335 6.30225 5.7335 6.94025C5.7335 8.24325 6.4175 9.40025 7.4585 10.0542C6.8375 10.0352 6.2485 9.85925 5.7275 9.57625C5.7275 9.59125 5.7275 9.60525 5.7275 9.61925C5.7275 11.4582 7.0395 12.9692 8.7495 13.3102C8.4235 13.3972 8.0825 13.4422 7.7305 13.4422C7.4725 13.4422 7.2205 13.4172 6.9745 13.3692C7.4585 14.8692 8.8775 15.9522 10.5365 15.9792C9.2315 17.0112 7.5795 17.6322 5.7955 17.6322C5.4675 17.6322 5.1435 17.6132 4.8235 17.5782C6.5455 18.6652 8.6535 19.3092 10.9065 19.3092C17.0515 19.3092 20.3545 14.2882 20.3545 9.87325C20.3545 9.72225 20.3505 9.57225 20.3425 9.42325C21.0155 8.94825 21.7915 8.30625 22.46 7.60025V6.00025Z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+            &copy; 2025 FurnishFlow. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.querySelector('header button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Simple JavaScript to read product ID from URL and display it (for demonstration)
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            if (productId) {
+                // In a real application, you would fetch product data based on this ID
+                // For now, we'll just update the title slightly to show it's dynamic
+                console.log('Product ID from URL:', productId);
+                const productTitleElement = document.getElementById('product-title');
+                if (productTitleElement) {
+                    productTitleElement.textContent = `Product ID: ${productId}`;
+                }
+
+                // Example: Populate content based on ID (static for this demo)
+                const products = {
+                    '1': {
+                        title: 'Modern Sofa',
+                        description: 'Experience ultimate comfort and style with our Modern Sofa. Crafted with premium velvet upholstery and robust wooden frame, this sofa offers a perfect blend of modern aesthetics and lasting durability. Ideal for contemporary living spaces, it provides ample seating for relaxation and entertaining guests.',
+                        price: '$1,299.00',
+                        oldPrice: '$1,500.00',
+                        image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Modern+Sofa'
+                    },
+                    '2': {
+                        title: 'Executive Desk',
+                        description: 'Sleek and functional for your home office. This desk features ample workspace and integrated storage solutions, perfect for productivity.',
+                        price: '$499.00',
+                        oldPrice: '$600.00',
+                        image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Executive+Desk'
+                    },
+                    '3': {
+                        title: 'Elegant Dining Set',
+                        description: 'Perfect for family gatherings and dinner parties. This dining set combines elegance with practicality, making it a centerpiece for any dining room.',
+                        price: '$899.00',
+                        oldPrice: '$1,000.00',
+                        image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Elegant+Dining+Set'
+                    },
+                    '4': {
+                        title: 'Cozy Armchair',
+                        description: 'Sink into comfort after a long day with this cozy armchair. Its plush cushioning and ergonomic design make it an ideal spot for reading or relaxing.',
+                        price: '$349.00',
+                        oldPrice: '$400.00',
+                        image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Cozy+Armchair'
+                    },
+                    '5': {
+                        title: 'Tranquil Bedroom Set',
+                        description: 'Create your perfect sanctuary with this tranquil bedroom set. Includes a comfortable bed, stylish dresser, and two nightstands, designed for serene sleep.',
+                        price: '$1,899.00',
+                        oldPrice: '$2,200.00',
+                        image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Tranquil+Bedroom+Set'
+                    },
+                    '6': {
+                        title: 'Classic Bookshelf',
+                        description: 'Organize your collection with style using this classic bookshelf. Its sturdy design and multiple shelves provide ample space for books and decor.',
+                        price: '$279.00',
+                        oldPrice: '$350.00',
+                        image: 'https://placehold.co/800x600/E5E7EB/4B5563?text=Classic+Bookshelf'
+                    }
+                    // Add more product data as needed
+                };
+
+                const product = products[productId];
+                if (product) {
+                    document.getElementById('product-title').textContent = product.title;
+                    document.getElementById('product-description').textContent = product.description;
+                    document.querySelector('.text-2xl.font-bold.text-indigo-700').textContent = product.price;
+                    document.querySelector('.text-sm.text-gray-500.line-through').textContent = product.oldPrice;
+                    document.getElementById('product-main-image').src = product.image;
+                    document.getElementById('product-main-image').alt = product.title;
+                } else {
+                    document.getElementById('product-title').textContent = 'Product Not Found';
+                    document.getElementById('product-description').textContent = 'The product you are looking for does not exist.';
+                    document.querySelector('.text-2xl.font-bold.text-indigo-700').textContent = '';
+                    document.querySelector('.text-sm.text-gray-500.line-through').textContent = '';
+                    document.getElementById('product-main-image').src = 'https://placehold.co/800x600/FF0000/FFFFFF?text=Product+Not+Found';
+                    document.getElementById('product-main-image').alt = 'Product Not Found';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
